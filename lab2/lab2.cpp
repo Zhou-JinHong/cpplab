@@ -3,152 +3,14 @@
 using namespace std;
 
 
-/*
-* class Date
 
-{
-
-public:
-
-// »ñÈ¡Ä³ÄêÄ³ÔÂµÄÌìÊý
-
-int GetMonthDay(int year, int month);
-
-
-
-  // È«È±Ê¡µÄ¹¹Ôìº¯Êý
-
-Date(int year = 1900, int month = 1, int day = 1);
-
-
-
-  // ¿½±´¹¹Ôìº¯Êý
-
-// d2(d1)
-
-Date(const Date& d);
-
-   
-
-  // ¸³ÖµÔËËã·ûÖØÔØ
-
-// d2 = d3 -> d2.operator=(&d2, d3)
-
-Date& operator=(const Date& d);
-
-
-
-  // Îö¹¹º¯Êý
-
-~Date();
-
-
-
-  // ÈÕÆÚ+=ÌìÊý
-
-Date& operator+=(int day);
-
-
-
-  // ÈÕÆÚ+ÌìÊý
-
-Date operator+(int day);
-
-
-
-  // ÈÕÆÚ-ÌìÊý
-
-Date operator-(int day);
-
-
-
-   // ÈÕÆÚ-=ÌìÊý
-
-Date& operator-=(int day);
-
-
-
-  // Ç°ÖÃ++
-
-Date& operator++();
-
-
-
-  // ºóÖÃ++
-
-Date operator++(int);
-
-
-
-  // ºóÖÃ--
-
-Date operator--(int);
-
-
-
-  // Ç°ÖÃ--
-
-Date& operator--();
-
-
-
-  // >ÔËËã·ûÖØÔØ
-
-bool operator>(const Date& d);
-
-
-
-  // ==ÔËËã·ûÖØÔØ
-
-bool operator==(const Date& d);
-
-
-
-  // >=ÔËËã·ûÖØÔØ
-
-bool operator >= (const Date& d);
-
-   
-
-  // <ÔËËã·ûÖØÔØ
-
-bool operator < (const Date& d);
-
-
-
-   // <=ÔËËã·ûÖØÔØ
-
-bool operator <= (const Date& d);
-
-
-
-  // !=ÔËËã·ûÖØÔØ
-
-bool operator != (const Date& d);
-
-
-
-  // ÈÕÆÚ-ÈÕÆÚ ·µ»ØÌìÊý
-
-int operator-(const Date& d);
-
-private:
-
-int _year;
-
-int _month;
-
-int _day;
-
-};
-*/
 
 
 
 class Date
 {
 public:
-	// »ñÈ¡Ä³ÄêÄ³ÔÂµÄÌìÊý
+	// èŽ·å–æŸå¹´æŸæœˆçš„å¤©æ•°
 	int GetMonthDay(int year, int month)
 	{
 		static int array[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
@@ -163,7 +25,7 @@ public:
 			return array[month];
 
 	}
-	// È«È±Ê¡µÄ¹¹Ôìº¯Êý
+	// å…¨ç¼ºçœçš„æž„é€ å‡½æ•°
 	Date(int year = 2022, int month = 8, int day = 8)
 	{
 		_year = year;
@@ -171,10 +33,10 @@ public:
 		_day = day;
 	}
 
-	//DateÀàÃ»ÓÐÐèÒªÇåÀíµÄ£¬ËùÒÔ²»ÐèÒªÐ´Îö¹¹º¯Êý
+	//Dateç±»æ²¡æœ‰éœ€è¦æ¸…ç†çš„ï¼Œæ‰€ä»¥ä¸éœ€è¦å†™æžæž„å‡½æ•°
 	//~Date()
 
-	//¿½±´¹¹Ôìº¯Êý
+	//æ‹·è´æž„é€ å‡½æ•°
 	Date(const Date& d)
 	{
 		_year = d._year;
@@ -182,7 +44,7 @@ public:
 		_day = d._day;
 	}
 
-	// ¸³ÖµÔËËã·ûÖØÔØ
+	// èµ‹å€¼è¿ç®—ç¬¦é‡è½½
 
 	// d2 = d3 -> d2.operator=(d3) -> d2.operator=(&d2, d3)
 
@@ -197,7 +59,7 @@ public:
 
 
 
-	// ÈÕÆÚ+=ÌìÊý
+	// æ—¥æœŸ+=å¤©æ•°
 
 	Date& operator+=(int day)
 	{
@@ -215,7 +77,7 @@ public:
 		return *this;
 	}
 
-	// ÈÕÆÚ+ÌìÊý
+	// æ—¥æœŸ+å¤©æ•°
 
 	Date operator+(int day)
 	{
@@ -235,7 +97,7 @@ public:
 		return d;
 	}
 
-	// ÈÕÆÚ-=ÌìÊý
+	// æ—¥æœŸ-=å¤©æ•°
 
 	Date& operator-=(int day)
 	{
@@ -253,7 +115,7 @@ public:
 		return *this;
 	}
 
-	// ÈÕÆÚ-ÌìÊý
+	// æ—¥æœŸ-å¤©æ•°
 
 	Date operator-(int day)
 	{
@@ -273,7 +135,7 @@ public:
 		return d;
 	}
 
-	// Ç°ÖÃ++
+	// å‰ç½®++
 
 	Date& operator++()
 	{
@@ -281,7 +143,7 @@ public:
 		return *this;
 	}
 
-	// ºóÖÃ++
+	// åŽç½®++
 
 	Date operator++(int)
 	{
@@ -290,14 +152,14 @@ public:
 		return d;
 	}
 
-	// Ç°ÖÃ--
+	// å‰ç½®--
 
 	Date& operator--()
 	{
 		return *this -= 1;
 	}
 
-	// ºóÖÃ--
+	// åŽç½®--
 
 	Date operator--(int)
 	{
@@ -306,7 +168,7 @@ public:
 		return d;
 	}
 
-	// >ÔËËã·ûÖØÔØ
+	// >è¿ç®—ç¬¦é‡è½½
 
 	bool operator>(const Date& d)
 	{
@@ -315,7 +177,7 @@ public:
 			|| (_year == d._year && _month == d._month && _day > d._day);
 	}
 
-	// ==ÔËËã·ûÖØÔØ
+	// ==è¿ç®—ç¬¦é‡è½½
 
 	bool operator==(const Date& d)
 	{
@@ -324,14 +186,14 @@ public:
 			&& (_day == d._day);
 	}
 
-	// >=ÔËËã·ûÖØÔØ
+	// >=è¿ç®—ç¬¦é‡è½½
 
 	bool operator >= (const Date& d)
 	{
 		return (*this > d) || (*this == d);
 	}
 
-	// <ÔËËã·ûÖØÔØ
+	// <è¿ç®—ç¬¦é‡è½½
 
 	bool operator < (const Date& d)
 	{
@@ -340,14 +202,14 @@ public:
 			|| (_year == d._year && _month == d._month && _day < d._day);
 	}
 
-	// <=ÔËËã·ûÖØÔØ
+	// <=è¿ç®—ç¬¦é‡è½½
 
 	bool operator <= (const Date& d)
 	{
 		return (*this < d) || (*this == d);
 	}
 
-	// !=ÔËËã·ûÖØÔØ
+	// !=è¿ç®—ç¬¦é‡è½½
 
 	bool operator != (const Date& d)
 	{
@@ -356,7 +218,7 @@ public:
 
 
 
-	// ÈÕÆÚ-ÈÕÆÚ ·µ»ØÌìÊý
+	// æ—¥æœŸ-æ—¥æœŸ è¿”å›žå¤©æ•°
 
 	int operator-(const Date& d) const
 	{
